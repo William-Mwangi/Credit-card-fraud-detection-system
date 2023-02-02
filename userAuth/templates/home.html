@@ -1,0 +1,108 @@
+{% extends 'base.html' %} 
+
+{% block title %}Home{% endblock %} 
+
+{% block content %} 
+
+
+{% if user.is_authenticated %} 
+	<div class="success"> Successful entry into the system</div>
+	Welcome <div class="user">{{ user.username }}! </div> to the ...  
+	<h1><bold>The Credit Card Validator</bold></h1>
+	
+	<form action="{% url 'process_data' %}" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<h3>please enter the details for the transaction:</h3>
+	
+	<label for="time">time: </label>
+	<input type="number" step="0.00000000000001" id="time" value="0" name="time" value = "{{ time }}"><br>
+	<label for="v1">V1: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v1" name="v1" value = "{{ v1 }}"><br>
+	<label for="v2">V2: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v2" name="v2" value = "{{ v2 }}"><br>
+	<label for="v3">V3: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v3" name="v3" value = "{{ v3 }}"><br>
+	<label for="v4">V4: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v4" name="v4" value = "{{ v4 }}"><br>
+	<label for="v5">V5: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v5" name="v5" value = "{{ v5 }}"><br>
+	<label for="v6">V6: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v6" name="v6" value = "{{ v6 }}"><br>
+	<label for="v7">V7: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v7" name="v7" value = "{{ v7 }}"><br>
+	<label for="v8">V8: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v8" name="v8" value = "{{ v8 }}"><br>
+	<label for="v9">V9: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v9" name="v9" value = "{{ v9 }}"><br>
+	<label for="v10">V10: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v10" name="v10" value = "{{ v10 }}"><br>
+	<label for="v11">V11: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v11" name="v11" value = "{{ v11 }}"><br>
+	<label for="v12">V12: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v12" name="v12" value = "{{ v12 }}"><br>
+	<label for="v13">V13: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v13" name="v13" value = "{{ v13 }}"><br>
+	<label for="v14">V14: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v14" name="v14" value = "{{ v14 }}"><br>
+	<label for="v15">V15: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v15" name="v15" value = "{{ v15 }}"><br>
+	<label for="v16">V16: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v16" name="v16" value = "{{ v16 }}"><br>
+	<label for="v17">V17: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v17" name="v17" value = "{{ v17 }}"><br>
+	<label for="v18">V18: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v18" name="v18" value = "{{ v18 }}"><br>
+	<label for="v19">V19: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v19" name="v19" value = "{{ v19 }}"><br>
+	<label for="v20">V20: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v20" name="v20" value = "{{ v20 }}"><br>
+	<label for="v21">V21: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v21" name="v21" value = "{{ v21 }}"><br>
+	<label for="v22">V22: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v22" name="v22" value = "{{ v22 }}"><br>
+	<label for="v23">V23: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v23" name="v23" value = "{{ v23 }}"><br>
+	<label for="v24">V24: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v24" name="v24" value = "{{ v24 }}"><br>
+	<label for="v25">V25: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v25" name="v25" value = "{{ v25 }}"><br>
+	<label for="v26">V26: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v26" name="v26" value = "{{ v26 }}"><br>
+	<label for="v27">V27: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v27" name="v27" value = "{{ v27 }}"><br>
+	<label for="v28">V28: </label>
+	<input type="number" value="0" step="0.00000000000001" id="v28" name="v28" value = "{{ v28 }}"><br><br>
+	<label for="amount">Amount: </label>
+	<input type="number" value="0" step="0.00000000000001" id="amount" name="amount" value = "{{ amount }}"><br>
+	<!---<div class= "form-submit-button "> <input type="submit" value="Submit"></div> -->
+	<hr>
+	<h2 class="center"> or if you have a csv file of transactions, you can submit it by uploading the file below: </h2>
+	<hr>
+	<label for="csv-file">Select a CSV file:</label>
+	<input type="file" id="csv-file" name="csv-file" accept=".csv">
+	
+	<div class="main">
+	<button class="button">Send</button>
+	<div class="loader">
+	<div class="check">
+	<span class="check-one"></span>
+	<span class="check-two"></span>
+	</div>
+	</div>
+	</div>
+	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	
+	
+	
+	
+	
+	<p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+	<p>You are not logged in</p>
+	<a href="{% url 'login' %}">Log In</a>
+{% endif %} 
+
+
+
+
+{% endblock %}

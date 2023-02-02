@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% block title %} something went wrong😢😢😢{% endblock %} 
+
+{% block content %} 
+
+<p> There was an <strong>error</strong> as you were signing in.
+INCORRECT PASSWORD OR USERNAME. 
+<hr>
+<hr>
+Could you please <a href="{% url 'login' %}">try again</a>. </p>
+<marquee> {{ e }} </marquee>
+{% endblock %}
+
+

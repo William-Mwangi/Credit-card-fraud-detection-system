@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+	{% block title %}The Prediction{% endblock %} 
+{% block content %}
+
+	<div class="success"><h1>Form Submitted Successfully</h1></div>
+
+	<p>Here is the form data you submitted:</p>
+	<ul>
+	  {% for key, value in form_data.items %}
+	  <li>{{ key }}: {{ value }}</li>
+	  {% endfor %}
+	</ul>
+
+	<p class="center">For the above transaction, {{ prediction }}</p>
+	<!-- <div>{{ lis }} 
+	<br>
+	{{ scaled_lis }}</div> -->
+
+	<footer>
+	  <a href="{% url 'home' %}"> return to try another transaction</a>
+	</footer>
+
+<<<<<<< HEAD
+		
+		<p class="center">For the above transaction, {{ prediction }} </p>
+		
+		<div>
+		<!-- {% verbatim %}
+		{{ trans5 }}
+		{% endverbatim  %} -->
+		{{ data }}
+		<table>
+		  <thead>
+			<tr>
+			  {% for header in data.0 %}
+			  <th>{{ header }}</th>
+			  {% endfor %}
+			</tr>
+		  </thead>
+		  <tbody>
+			{% for row in data %}
+			<tr>
+				{% for cell in row %}
+				<td>{{ cell }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		  </tbody>
+		</table> 
+
+		</div>
+		
+		<footer>
+			<a href="{% url 'home' %}"> return to try another transaction</a>
+		
+		
+		
+		
+		
+		</footer>
+		
+		<!--user_data = request.POST['user_data']     ------=> for direct sending of data from 1 html page to another
+		user_data = request.POST
+		<p> user_data</p>
+		
+		<p>Data: {{ request.GET.data }}</p> -->
+=======
+	<!--user_data = request.POST['user_data']     ------=> for direct sending of data from 1 html page to another
+			user_data = request.POST
+			<p> user_data</p>
+			
+			<p>Data: {{ request.GET.data }}</p> -->
+>>>>>>> be860584ccfddb6e8cf9daa1854b0b604508feaa
+
+{% endblock %}

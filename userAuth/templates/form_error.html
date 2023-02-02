@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+
+
+ {% block title %} Error ❗❗❗❗ {% endblock %} 
+
+
+
+{% block content %}
+
+<p><div class="warning">An error has just occurred in your form submission.</div> <div class="error"> Could you please resend the data</div>. </p>
+<div class="info"> the error was: {{ e }} </div>
+
+<br>
+<br>
+
+
+<p> return to <a href="{% url 'home' %}"> home page </a> </p>
+{% endblock %}
+
+
